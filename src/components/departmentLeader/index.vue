@@ -6,7 +6,14 @@
     <div style="border: 1px solid black;">
       <span>待确认</span>
       <li v-for="task in tasks" v-if="task.name==='部门负责人确认'">
-        <router-link :to="'/record-process/department-leader-confirm/task/'+task.id"> 任务id{{task.id}}
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
+        </router-link>
+      </li>
+    </div>
+    <div style="border: 1px solid black;">
+      <span>其他</span>
+      <li v-for="task in tasks" v-if="task.name!=='部门负责人确认'">
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
         </router-link>
       </li>
     </div>

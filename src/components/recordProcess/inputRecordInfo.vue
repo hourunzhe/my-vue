@@ -73,7 +73,28 @@
                 name: 'to',
                 value: parent.user.email,
                 type: 'string'
-              }]
+              }, {
+                name: 'masterResult',
+                value: false,
+                type: 'boolean'
+              }, {
+                name: 'projectLeaderCheckResult',
+                value: false,
+                type: 'boolean'
+              }, {
+                name: 'projectLeaderConfirmResult',
+                value: false,
+                type: 'boolean'
+              }, {
+                name: 'departmentLeaderConfirmResult',
+                value: false,
+                type: 'boolean'
+              }, {
+                name: 'paperResult',
+                value: false,
+                type: 'boolean'
+              }
+              ]
             },
             url: 'http://localhost:8081/runtime/tasks/' + parent.task.id
           }).then(function (response) {

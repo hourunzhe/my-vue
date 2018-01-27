@@ -5,7 +5,7 @@
     <div style="border: 1px solid black;">
       <span>待初审</span>
       <li v-for="task in tasks" v-if="task.name==='主办初审'">
-        <router-link :to="'/record-process/first-check/task/'+task.id"> 任务id{{task.id}}
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
         </router-link>
       </li>
     </div>
@@ -13,7 +13,7 @@
     <div style="border: 1px solid black;">
       <span>纸质材料审查</span>
       <li v-for="task in tasks" v-if="task.name==='纸质材料审查'">
-        <router-link :to="'/record-process/paper-check/task/'+task.id"> 任务id{{task.id}}
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
         </router-link>
       </li>
     </div>
@@ -24,7 +24,13 @@
         </router-link>
       </li>
     </div>
-
+    <div style="border: 1px solid black;">
+      <span>其他</span>
+      <li v-for="task in tasks" v-if="task.name!=='发证' && task.name!=='纸质材料审查' && task.name!=='主办初审'">
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
+        </router-link>
+      </li>
+    </div>
     <div>
       <form method="post" action="http://localhost:8081/repository/deployments" enctype="multipart/form-data">
         <input type="file" name="file">

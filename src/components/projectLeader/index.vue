@@ -6,7 +6,7 @@
     <div style="border: 1px solid black;">
       <span>待审查</span>
       <li v-for="task in tasks" v-if="task.name==='项目负责人审查'">
-        <router-link :to="'/record-process/project-leader-check/task/'+task.id"> 任务id{{task.id}}
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
         </router-link>
       </li>
     </div>
@@ -14,7 +14,14 @@
     <div style="border: 1px solid black;">
       <span>待确认</span>
       <li v-for="task in tasks" v-if="task.name==='项目负责人确认'">
-        <router-link :to="'/record-process/project-leader-confirm/task/'+task.id"> 任务id{{task.id}}
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
+        </router-link>
+      </li>
+    </div>
+    <div style="border: 1px solid black;">
+      <span>其他</span>
+      <li v-for="task in tasks" v-if="task.name!=='项目负责人确认' && task.name!== '项目负责人审查'">
+        <router-link :to="'/record-process/check/task/'+task.id"> 任务id{{task.id}}
         </router-link>
       </li>
     </div>
